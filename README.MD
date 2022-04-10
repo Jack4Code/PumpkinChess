@@ -1,0 +1,1 @@
+A simple chess engine implemented in c++ utilizing some of the more traditional techniques for game tree pruning such as alpha-beta pruning, minimax.
