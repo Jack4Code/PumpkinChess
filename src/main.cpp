@@ -122,7 +122,22 @@ int main()
 
     // cout << bp << endl << br << endl << bn << endl << bb << endl << bq << endl << bk << endl;
 
-    BitBoard *bitBoard = new BitBoard();
+    BitBoard * bitBoard = new BitBoard();
+
+    cout << bitBoard->bp << endl;
+    cout << bitBoard->br << endl;
+    cout << bitBoard->bn << endl;
+    cout << bitBoard->bb << endl;
+    cout << bitBoard->bq << endl;
+    cout << bitBoard->bk << endl;
+    cout << bitBoard->wp << endl;
+    cout << bitBoard->wr << endl;
+    cout << bitBoard->wn << endl;
+    cout << bitBoard->wb << endl;
+    cout << bitBoard->wq << endl;
+    cout << bitBoard->wk << endl;
+
+    bitBoard->printBoard();
 
     cout << "Testing" << endl;
 
