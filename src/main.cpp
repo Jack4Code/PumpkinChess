@@ -1,5 +1,6 @@
 #include <iostream>
 #include <bitset>
+#include "BitBoard.h"
 
 using namespace std;
 
@@ -97,29 +98,33 @@ void convertBoardToPieceBitBoard(char board[], unsigned long long &bp,
 
 int main()
 {
-    unsigned long long bp, br, bn, bb, bq, bk, wp, wr, wn, wb, wq, wk;
+    // unsigned long long bp, br, bn, bb, bq, bk, wp, wr, wn, wb, wq, wk;
 
-    char board[] = {
-        'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r',
-        'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p',
-        '.', '.', '.', '.', '.', '.', '.', '.',
-        '.', '.', '.', '.', '.', '.', '.', '.',
-        '.', '.', '.', '.', '.', '.', '.', '.',
-        '.', '.', '.', '.', '.', '.', '.', '.',
-        'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P',
-        'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'};
+    // char board[] = {
+    //     'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r',
+    //     'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p',
+    //     '.', '.', '.', '.', '.', '.', '.', '.',
+    //     '.', '.', '.', '.', '.', '.', '.', '.',
+    //     '.', '.', '.', '.', '.', '.', '.', '.',
+    //     '.', '.', '.', '.', '.', '.', '.', '.',
+    //     'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P',
+    //     'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'};
 
-    convertBoardToPieceBitBoard(board, bp, br, bn, bb, bq, bk, wp, wr, wn, wb, wq, wk);
-    cout << bp << endl;
+    // convertBoardToPieceBitBoard(board, bp, br, bn, bb, bq, bk, wp, wr, wn, wb, wq, wk);
+    // cout << bp << endl;
 
-    if (bp == 71776119061217280)
-    {
-        cout << "Correct!" << endl;
-    }
+    // if (bp == 71776119061217280)
+    // {
+    //     cout << "Correct!" << endl;
+    // }
 
-    unsigned long long testBlackPawns = 71776119061217280;
+    // unsigned long long testBlackPawns = 71776119061217280;
 
-    cout << bp << endl << br << endl << bn << endl << bb << endl << bq << endl << bk << endl;
+    // cout << bp << endl << br << endl << bn << endl << bb << endl << bq << endl << bk << endl;
+
+    BitBoard *bitBoard = new BitBoard();
+
+    cout << "Testing" << endl;
 
     return 0;
 }
