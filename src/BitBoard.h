@@ -11,4 +11,7 @@ public:
     void convertBoardToPieceBitBoard(char board[]);
     void printBoard();
 
+    //Move generation:
+    unsigned long long generatePawnMoves(bool isWhite);
+
 };

@@ -97,65 +97,68 @@ void BitBoard::convertBoardToPieceBitBoard(char board[])
 
 void BitBoard::printBoard()
 {
-    char board[64] = {'.'};
+    char board[64];
+
+    for(int i=0; i<64; i++)
+    {
+        board[i] = '.';
+    }
 
     for (int i = 0; i < 12; i++)
     {
-        unsigned long long piece;
         char pieceChar = '.';
+        string strBoard;
         switch (i)
         {
         case 0:
-            piece = bp;
+            strBoard  = bitset<64>(bp).to_string();
             pieceChar = 'p';
             break;
         case 1:
-            piece = br;
+            strBoard  = bitset<64>(br).to_string();
             pieceChar = 'r';
             break;
         case 2:
-            piece = bn;
+            strBoard  = bitset<64>(bn).to_string();
             pieceChar = 'n';
             break;
         case 3:
-            piece = bb;
+            strBoard  = bitset<64>(bb).to_string();
             pieceChar = 'b';
             break;
         case 4:
-            piece = bq;
+            strBoard  = bitset<64>(bq).to_string();
             pieceChar = 'q';
             break;
         case 5:
-            piece = bk;
+            strBoard  = bitset<64>(bk).to_string();
             pieceChar = 'k';
             break;
         case 6:
-            piece = wp;
+            strBoard  = bitset<64>(wp).to_string();
             pieceChar = 'P';
             break;
         case 7:
-            piece = wr;
+            strBoard  = bitset<64>(wr).to_string();
             pieceChar = 'R';
             break;
         case 8:
-            piece = wn;
+            strBoard  = bitset<64>(wn).to_string();
             pieceChar = 'N';
             break;
         case 9:
-            piece = wb;
+            strBoard  = bitset<64>(wb).to_string();
             pieceChar = 'B';
             break;
         case 10:
-            piece = wq;
+            strBoard  = bitset<64>(wq).to_string();
             pieceChar = 'Q';
             break;
         case 11:
-            piece = wk;
+            strBoard  = bitset<64>(wk).to_string();
             pieceChar = 'K';
             break;
         }
-
-        string strBoard = bitset<64>(piece).to_string();
 
         for(int j=0; j<64; j++)
         {
@@ -163,19 +166,28 @@ void BitBoard::printBoard()
             {
                 board[j] = pieceChar;
             }
-            else
-            {
-                board[j] = '.';
-            }
         }
     }
 
     for(int i=0; i<64; i++)
     {
-        cout << board[i];
-        if(i%7 == 0)
+        cout << board[i] << " ";
+        if((i == 7) || (i == 15) || (i == 23) || (i == 31) || (i == 39) || (i == 47) || (i == 55))
         {
             cout << "\n";
         }
     }
+    cout << "\n";
 }
+
+unsigned long long BitBoard::generatePawnMoves(bool isWhite)
+{
+    unsigned long long possibleMoves = isWhite ? this->wp : this->bp;
+
+    possibleMoves = isWhite ? possibleMoves << 8 : possibleMoves >> 8;
+
+    return possibleMoves;
+}
+
+
+

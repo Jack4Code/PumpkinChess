@@ -124,22 +124,24 @@ int main()
 
     BitBoard * bitBoard = new BitBoard();
 
-    cout << bitBoard->bp << endl;
-    cout << bitBoard->br << endl;
-    cout << bitBoard->bn << endl;
-    cout << bitBoard->bb << endl;
-    cout << bitBoard->bq << endl;
-    cout << bitBoard->bk << endl;
-    cout << bitBoard->wp << endl;
-    cout << bitBoard->wr << endl;
-    cout << bitBoard->wn << endl;
-    cout << bitBoard->wb << endl;
-    cout << bitBoard->wq << endl;
-    cout << bitBoard->wk << endl;
+    // cout << bitBoard->bp << endl;
+    // cout << bitBoard->br << endl;
+    // cout << bitBoard->bn << endl;
+    // cout << bitBoard->bb << endl;
+    // cout << bitBoard->bq << endl;
+    // cout << bitBoard->bk << endl;
+    // cout << bitBoard->wp << endl;
+    // cout << bitBoard->wr << endl;
+    // cout << bitBoard->wn << endl;
+    // cout << bitBoard->wb << endl;
+    // cout << bitBoard->wq << endl;
+    // cout << bitBoard->wk << endl;
 
     bitBoard->printBoard();
+    cout << endl;
+    bitBoard->wp = bitBoard->generatePawnMoves(true);
 
-    cout << "Testing" << endl;
+    bitBoard->printBoard();
 
     return 0;
 }
